@@ -1,6 +1,6 @@
 import React from "react";
 import { render, waitFor } from "@testing-library/react";
-import { ComicsData } from "../components/ComicsData";
+import { ComicsData } from "../pages/comics-home/ComicsData";
 
 it("comics with proper HTML structure", async () => {
     render(<ComicsData />);

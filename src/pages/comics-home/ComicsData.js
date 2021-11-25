@@ -1,19 +1,19 @@
-import './series-data.css';
-import { React, useEffect, useState } from "react";
+import './comics-data.css';
+import React, { useState, useEffect } from 'react';
 
 import fetchData from '../../utils/fetchData';
 import { AlertErrors } from '../../components/AlertErrors';
 import { CardComponent } from '../../components/CardComponent';
 import { ProgressComponent } from '../../components/ProgressComponent';
 
-export const SeriesData = () => {
+export const ComicsData = () => {
 
-    const [items, setData] = useState([]);
+    const [comics, setData] = useState([]);
     const [error, setError] = useState([]);
 
     //call utils func and fetch data
     useEffect(() => {
-        fetchData.getApiData('series')
+        fetchData.getApiData('comics')
             .then(data => {
                 if (data.code === 200)
                     setData(data.data.results); //successful call to api
@@ -29,25 +29,26 @@ export const SeriesData = () => {
     };
 
     //displaying progress while data gets fetch from api
-    if (items.length === 0) {
+    if (comics.length === 0) {
         return (<ProgressComponent />);
     };
-    
+
     //rendering success data
     //re-usable <CardComponent>
     return(
         <div className="container">
-            {items.map((item, i) => {
+            {comics.map((comic, i) => {
                 return(
                     <CardComponent
                         key={i} 
-                        imgObj={item.thumbnail}
-                        title={item.title}
-                        format={item.format}
-                        modified={item.modified}
+                        imgObj={comic.thumbnail}
+                        title={comic.title}
+                        format={comic.format}
+                        modified={comic.modified}
                     />
-                )
-            })}
+                );
+            })};
         </div>
     );
+    
 };
