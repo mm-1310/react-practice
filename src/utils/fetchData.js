@@ -13,8 +13,7 @@ const fetchData = {
     //return response/error
     getApiData: async(pathParam) => {
         return fetch(`${url}/${pathParam}?offset=20&ts=${timeStamp}&apikey=${publicKey}&hash=${hash}`)
-            .then(response => response.json())
-            .catch(err => err);
+            .then(response => response.json());
     }
 };
 

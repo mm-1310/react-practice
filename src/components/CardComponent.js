@@ -13,24 +13,24 @@ export const CardComponent = (props) => {
 
     //display data from props if not null
     return(
-        <Card className="card" style={setComicsStyle()}>
+        <Card className="card" role="div" style={setComicsStyle()}>
             <CardMedia
                 image={props?.imgObj['path'] + '/landscape_incredible.' + props?.imgObj['extension']}
                 component="img"
                 alt={props?.title}
-                className="comic-image"
+                className="card-image"
             />
 
             <CardContent>
-                <Typography className="comic-title" variant="h7" gutterBottom component="div">
+                <Typography className="card-title" variant="h7" gutterBottom component="div">
                     {props?.title}
                 </Typography>
 
-                <Typography className="comic-format" variant="h7" gutterBottom component="div">
+                <Typography className="card-format" variant="h7" gutterBottom component="div">
                     {props?.format}
                 </Typography>
 
-                <Typography className="comic-modified" variant="h7" gutterBottom component="div">
+                <Typography className="card-modified" variant="h7" gutterBottom component="div">
                     {props?.modified}
                 </Typography>
             </CardContent>
