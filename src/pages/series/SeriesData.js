@@ -20,7 +20,7 @@ export const SeriesData = () => {
                 else
                     setError(data); //failed call to api
             })
-            .catch(err => <AlertErrors message={err} />);
+            .catch(err => setError(err));
     }, []);
 
     //re-usable <AlertErros> component

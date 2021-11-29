@@ -16,6 +16,8 @@ it("should call api at least once", async () => {
     
     waitFor(() => {
         expect(mockAPI).toHaveBeenCalledTimes(1);
+        expect(mockAPI).toHaveBeenCalledWith('comics');
+
         fakeResponse.forEach((i) => {
             expect(screen.getByText(i.title)).toBeInTheDocument();
             expect(screen.getByText(i.format)).toBeInTheDocument();

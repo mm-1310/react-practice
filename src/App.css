@@ -6,6 +6,7 @@
 .title-container, h1 {
     margin: 0;
     padding: 0;
+    color: #2B2E34;
 }
 
 .title-container {
@@ -30,4 +31,32 @@
 
 .card:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 20px 50px 50px -30px;
+}
+
+header {
+    background-color: #03DAC5;
+    padding-bottom: 20px;
+}
+
+.nav-container {
+    display: flex; 
+    justify-content: center;
+}
+
+.links {
+    padding: 10px 15px;
+    margin: 0 10px;
+
+    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 8px;
+
+    color: #2B2E34;
+
+    transition: all .2s ease-out;
+}
+
+.links:hover {
+    background-color: #fff;
+    transition: all .2s ease-in;
 }

@@ -7,15 +7,15 @@ import Typography from '@mui/material/Typography';
 
 export const CardComponent = (props) => {
     //set card styling
-    const setComicsStyle = () => {
+    const setCardStyle = () => {
         return {display: 'flex', justifyContent: 'center', flexDirection: 'column', flexGrow: 1};
     };
 
     //display data from props if not null
     return(
-        <Card className="card" role="div" style={setComicsStyle()}>
+        <Card className="card" role="div" style={setCardStyle()}>
             <CardMedia
-                image={props?.imgObj['path'] + '/landscape_incredible.' + props?.imgObj['extension']}
+                image={props?.imgObj['path'] + '.' + props?.imgObj['extension']}
                 component="img"
                 alt={props?.title}
                 className="card-image"
